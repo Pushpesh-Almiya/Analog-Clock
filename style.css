@@ -98,13 +98,11 @@ body{
         height: 250px;
        
     }
-    .container{
-         margin: auto;
-    }
     .hand i{
         height: var(--nh);
     }
     .clock{
+         margin: auto;
         background-size: 290px 270px;
         background-position-x: 40%;
         background-position-y: -25px;
