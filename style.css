@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: linear-gradient(rgb(31, 51, 239), rgb(243, 10, 10), rgb(15, 238, 208));
+    background-repeat: no-repeat;
+}
+.container{
+    position: relative;
+    /* text-align: center; */
+}
+.text{
+    color: white;
+    margin: 0;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 22px;
+    font-style: italic;
+    text-shadow: 10px 10px 10px rgb(0,0,0,0.9);
+}
+.clock{
+    
+    font-family:'Times New Roman', Times, serif;
+    margin-top: 30px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: 500px 420px;
+    background-position-x: 42%;
+    background-position-y: -20px;
+    background-color: rgb(255, 255, 255,0.1);
+    border: 2px solid rgb(255, 255, 255,0.25);
+    box-shadow: 30px 30px 30px rgb(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Round Numbering */
+.clock span {
+    margin-top: 90px;
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i))); /*total angle/total numbering*/
+    inset: 12px;
+    text-align: center;
+}
+
+/*Display Number in right way*/
+.clock span strong{
+    transform: rotate(calc(-30deg * var(--i)));
+    display:inline-block;
+    font-size: 20px;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+
+/*Center Point*/
+.clock::before{
+    content: '';
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Niddles */
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+}
+@media screen and (max-width: 533px){
+    .clock{
+        width: 250px;
+        height: 250px;
+    }
+    .hand i{
+        height: var(--nh);
+    }
+    .clock{
+        margin-top: 30px;
+        border-radius: 50%;
+        background-image: url("background.jpg");
+        background-repeat: no-repeat;
+        background-size: 300px 250px;
+        background-position-x: 42%;
+        background-position-y: -20px;
+    }
+}
+
+
